@@ -54,6 +54,12 @@
                         Cart
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/lab_6" >Lab_6</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact" >Lab_7</a>
+                </li>
 
 
             </ul>
