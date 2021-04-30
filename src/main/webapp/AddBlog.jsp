@@ -5,6 +5,8 @@
   Time: 0:42
   To change this template use File | Settings | File Templates.
 --%>
+<jsp:useBean id="user" class="com.example.MidTerm.User" scope="session"/>
+<jsp:setProperty name="user" property="*"/>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -38,22 +40,24 @@
 <div class="container-contact100">
 
     <div class="wrap-contact100">
-        <form class="contact100-form validate-form" action="/add_Blog" method="post">
+        <form class="contact100-form validate-form" action="AddBlogServlet" method="post">
 				<span class="contact100-form-title">
 					Create Some Blog
 				</span>
-
             <div class="wrap-input100 validate-input" data-validate="Please enter your name">
-                <input class="input100" type="text" name="name" placeholder="Blog Title">
+                <input type="hidden" name="userId" value="<%=user.getId()%>">
+                <input class="input100" type="text" name="title" placeholder="Blog Title">
                 <span class="focus-input100"></span>
             </div>
 
             <div class="wrap-input100 validate-input" data-validate = "Please enter your email: e@a.x">
+                <input type="hidden" name="userId" value="<%=user.getId()%>">
                 <input class="input100" type="text" name="category" placeholder="Category">
                 <span class="focus-input100"></span>
             </div>
 
             <div class="wrap-input100 validate-input" data-validate = "Please enter your message">
+                <input type="hidden" name="userId" value="<%=user.getId()%>">
                 <textarea class="input100" name="description" placeholder="Full Description"></textarea>
                 <span class="focus-input100"></span>
             </div>

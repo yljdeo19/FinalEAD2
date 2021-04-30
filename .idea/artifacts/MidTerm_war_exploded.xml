@@ -18,6 +18,9 @@
           <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
           <element id="library" level="project" name="Maven: javax.servlet.jsp:jsp-api:2.1" />
           <element id="library" level="project" name="Maven: taglibs:standard:1.1.2" />
+          <element id="library" level="project" name="Maven: org.postgresql:postgresql:42.2.20" />
+          <element id="library" level="project" name="Maven: org.checkerframework:checker-qual:3.5.0" />
+          <element id="library" level="project" name="Maven: org.flywaydb:flyway-core:7.8.2" />
         </element>
       </element>
       <element id="directory" name="META-INF">

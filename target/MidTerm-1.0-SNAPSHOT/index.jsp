@@ -1,3 +1,5 @@
+<jsp:useBean id="user" class="com.example.MidTerm.User" scope="session"/>
+<jsp:setProperty name="user" property="*"/>
 <html>
 <head>
     <title>MidTerm</title>
@@ -38,27 +40,21 @@
             <!-- Left links -------------------------------------->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/index">Main
+                    <a class="nav-link" href="index">Main
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/blog_list" >Blog</a>
+                    <a class="nav-link" href="blog_list" >Blog</a>
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/contact" >Contacts</a>
-                </li>
-                <li class="nav-item">
-                    <a href=""class="nav-link" id="popcart">
-                        <i class="fas fa-cart-plus"></i>
-                        Cart
-                    </a>
+                    <a class="nav-link" href="contact" >Contacts</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/lab_6" >Lab_6</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/contact" >Lab_7</a>
+                    <a class="nav-link" href="/login.jsp" >Lab_7</a>
                 </li>
 
 
@@ -85,9 +81,9 @@
                         <i class="fab fa-instagram"></i>
                     </a>
                 </li>
-
+                <% if (user.getUsername() == null) { %>
                 <li class="nav-item">
-                    <a href="login.jsp" class="nav-link border border-light rounded">
+                    <a href="/login" class="nav-link border border-light rounded">
                         <i class="fab fa-github mr-2"></i>Login
                     </a>
                 </li>
@@ -96,6 +92,14 @@
                         <i class="fab fa-github mr-2"></i>Reg
                     </a>
                 </li>
+                <%}%>
+                <% if (user.getUsername() != null) { %>
+                <li><a href="result.jsp" class="nav-link border border-light rounded">
+                    <i class="fab fa-github mr-2"></i>
+                    <jsp:getProperty name="user" property="username"/>
+                </a></li>
+                <li><a href="logout" class="nav-link border border-light rounded"> <i class="fab fa-github mr-2"></i>Log out</a></li>
+                <%}%>
             </ul>
         </div>
     </div>

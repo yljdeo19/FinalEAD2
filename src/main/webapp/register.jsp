@@ -35,7 +35,7 @@
 <div class="limiter">
     <div class="container-login100">
         <div class="wrap-login100">
-            <form class="login100-form validate-form" action="/register" method="post">
+            <form class="login100-form validate-form" action="register" method="post">
 					<span class="login100-form-title p-b-26">
 						Welcome
 					</span>
@@ -60,7 +60,7 @@
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-                    <input class="input100" type="password" name="confirmPassword">
+                    <input class="input100" type="password" name="Confirmpassword">
                     <span class="focus-input100" data-placeholder="Password"></span>
                 </div>
 

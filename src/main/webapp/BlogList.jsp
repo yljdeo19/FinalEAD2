@@ -1,13 +1,12 @@
-<%@ page import="com.example.MidTerm.AddBlogServlet" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="java.util.List" %><%--
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%--
   Created by IntelliJ IDEA.
   User: Dream
   Date: 15.03.2021
   Time: 1:22
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>MidTerm</title>
@@ -23,6 +22,8 @@
     <link href="static/css/util.css" rel="stylesheet">
 </head>
 <body>
+<jsp:useBean id="postList" type="java.util.List<com.example.MidTerm.Blog>" scope="request"> </jsp:useBean>
+    <jsp:setProperty name="postList" property="*"/>
 <main style="color:grey">
     <div class="container m-t-100 m-b-100" style="background-color: white; border-radius: 20px; text-decoration-color: black">
 
@@ -39,51 +40,34 @@
                 </tr>
                 </thead>
                 <tbody>
+                <%! int counter = 0; %>
+                <% for (int i = 0; i < postList.size(); i++) { %>
                <tr>
                    <td>
-                       1
+                        <%out.print(i);%>
                    </td>
                    <td>
                        <%
+                       out.print(postList.get(i).getTitle());%>
 
-                           String name = request.getParameter("name");
-                           String category = request.getParameter("category");
-                           String description = request.getParameter("description");
-
-
-                           out.println(name);
+                   </td>
+                   <td>
+                       <%
+                           out.print(postList.get(i).getCategory());
                        %>
                    </td>
                    <td>
                        <%
-                           out.println(category);
+                           out.print(postList.get(i).getDescription());
                        %>
                    </td>
-                   <td>
-                       <%
-                           out.println(description);
-                       %>
-                   </td>
-                   <td>Good</td>
+                   <td>made by <% out.print(postList.get(i).getUsers().getUsername());%></td>
                </tr>
-               <tr>
-                   <td>2</td>
-                   <td>Cake Puff-In-Bacon</td>
-                   <td>Cakes</td>
-                   <td>Beautiful cake with a little bit nervous</td>
-                   <td>The Best</td>
-               </tr>
-               <tr>
-                   <td>3</td>
-                   <td>Bakery Lake</td>
-                   <td>Salad</td>
-                   <td>Make up your day such more better</td>
-                   <td>Well Done</td>
-               </tr>
+                <%}%>
                 <tr>
                     <td colspan="5">
-                        <a class='btn btn-warning float-right ml-2' href='/add_Blog'>Add Blog</a>
-                        <a class='btn btn-primary float-right' href='logged'>View Profile</a>
+                        <a class='btn btn-warning float-right ml-2' href="AddBlogServlet">Add Blog</a>
+                        <a class='btn btn-primary float-right' href=''>View Profile</a>
                     </td>
                 </tr>
 
