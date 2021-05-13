@@ -48,6 +48,14 @@
 
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="AddProductServlet" >Add Product</a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="prod_serv" >All Products</a>
+
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="contact" >Contacts</a>
                 </li>
                 <li class="nav-item">
